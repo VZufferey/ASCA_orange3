@@ -42,8 +42,8 @@ interactions = [[1, 2], [1, 4]]
 asca.fit(X, F, interactions=interactions, factor_names=factor_names, variable_names=variable_names)  
 
 #Plotting factors and interactions
-#asca.plot_factors()
-#asca.plot_interactions(interactions=interactions)
+asca.plot_factors()
+asca.plot_interactions(interactions=interactions)
 
 #ASCA output to files: PC summary matrices (residuals, ...)
 residuals = asca.getResiduals()
