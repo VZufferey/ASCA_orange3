@@ -14,9 +14,9 @@ data = pd.DataFrame(in_data.X, columns=[var.name for var in in_data.domain.attri
 meta = pd.DataFrame(in_data.metas, columns=[var.name for var in in_data.domain.metas])
 df = pd.concat([data, meta], axis=1)
 
-factor_names = ['Replicate', 'mouse ID', 'TimeLapseIndex', 'Treatment', 'Condition unique', 'Well', 'Condition mouse'] ### <<<SELECTED FACTOR COLUMNS HERE
+factor_names = ['Factor 1', 'Factor2', '...'] ### <<<SELECTED FACTOR COLUMNS HERE
 print("ORANGE: Factors names: ", factor_names, "\n")
-var_String= 'NORM' ### <<<ENTER STRING TO RECOGNIZE GFETURES/VARIABLES COLUMN HERE
+var_String= 'factor_' ### <<<ENTER STRING TO RECOGNIZE GFETURES/VARIABLES COLUMN HERE
 
 #Factors definition (F) : names, values matrix, and dictionnaries of values for each factor columns from entered informations
 # categorical object
@@ -33,7 +33,7 @@ print(F)
 #quantitative variables (X) ("NORM" in header)
 variable_names = [col for col in df.columns if var_String in col]
 print("ORANGE: Variables names: ", variable_names, "\n")
-X = df[[col for col in df.columns if 'NORM' in col]].values
+X = df[[col for col in df.columns if var_String in col]].values
 
 # Define interactions to test
 interactions = [[1, 2], [1, 4]]
@@ -42,8 +42,8 @@ interactions = [[1, 2], [1, 4]]
 asca.fit(X, F, interactions=interactions, factor_names=factor_names, variable_names=variable_names)  
 
 #Plotting factors and interactions
-asca.plot_factors()
-asca.plot_interactions(interactions=interactions)
+#asca.plot_factors()
+#asca.plot_interactions(interactions=interactions)
 
 #ASCA output to files: PC summary matrices (residuals, ...)
 residuals = asca.getResiduals()
