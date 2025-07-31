@@ -20,3 +20,10 @@ ASCA Analysis in Orange3:
 5. Adapt the python script (in the python script node): Enter the factor column names (factor_names) (coresponds togrouping columns, qualitative data..), and the string (var_String) that must be used to detect the feature columns (coresponds to the cquantitative values)
 
 6. plots should appear, and data tables should be saved at the location of the orange pipeline, in the /ASCA Folder 
+
+Source script: 
+https://pypi.org/project/ASCA/
+
+Smilde, Age K., et al. "ANOVA-simultaneous component analysis (ASCA): a new tool for analyzing designed metabolomics data." Bioinformatics 21.13 (2005): 3043-3048.
+
+Jansen, Jeroen J., et al. "ASCA: analysis of multivariate data obtained from an experimental design." Journal of Chemometrics: A Journal of the Chemometrics Society 19.9 (2005): 469-481.
