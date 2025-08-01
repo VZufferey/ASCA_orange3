@@ -98,7 +98,6 @@ class ASCA(BaseEstimator):
         return scores, loadings, projected, singular_values, explained
 
     def fit(self, X, y, interactions=[None], factor_names=None, variable_names=None): #VZ
-
         # initialize for SCA/PCA
         # scores
         self.factors_scores = []
@@ -491,8 +490,12 @@ class ASCA(BaseEstimator):
                 self.factors_explained)
 
     # Function to save summary of the fit function (residuals, scores, etc)
-    def getResiduals(self):
-        return self.residuals
+    def getEffects(self, factor=None):
+        print("factor: ",factor,", (",self.factor_names[factor],")")
+        if factor is not None:
+            return self.factors[factor]
+        else:
+            return self.factors
 
     # Function to save the PCA scatter plots data (xfor further replotting in other plotting softwares)
     def getData_PCplot(self, Factor=None):
