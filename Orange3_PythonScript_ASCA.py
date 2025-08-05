@@ -72,12 +72,12 @@ if factor_subtract_id is not None:
 
     asca.fit(X_corrected, F, interactions=interactions, factor_names=factor_names_corrected, variable_names=variable_names_corrected)
 
-#ASCA2 output to files
-for i in range(len(factor_names)): #exporter un tableau du plot PCA pour chaque factor
-    filename = "ASCA_PCplot_"+str(factor_names[i])+"-"+asca.factor_names[factor_subtract_id]+".txt"
-    file_path = os.path.join(path2, filename)
-    table = asca.getData_PCplot(Factor=i) #;print(table)
-    table.to_csv(file_path, sep='\t', index=False, header=True)
+    #ASCA2 output to files
+    for i in range(len(factor_names)): #exporter un tableau du plot PCA pour chaque factor
+        filename = "ASCA_PCplot_"+str(factor_names[i])+"-"+asca.factor_names[factor_subtract_id]+".txt"
+        file_path = os.path.join(path2, filename)
+        table = asca.getData_PCplot(Factor=i) #;print(table)
+        table.to_csv(file_path, sep='\t', index=False, header=True)
 
 #Plotting factors and interactions
 if getPlots:
