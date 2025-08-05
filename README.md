@@ -7,7 +7,7 @@ Pthon script node(included in pipeline): ASCA_Orange3.py
 ASCA analysis from customized ASCA library: needs separate installation of package. 
 	a. install vanilla library and add/replace ASCA.py so that ASCA_RL.py is used.
 
-Installation for Windows:
+*Installation for Windows:*
 
 ASCA can be installed with >>>pip install ASCA (more info on ASCA page, source below), but where you enter this command will depend on how Orange3 is installed on your machine.
 
@@ -18,7 +18,7 @@ Vanilla ASCA library installation for orange3's python scripts --> package local
 locate ...\Lib\site-packages\ASCA at the location of the environment, and copy ASCA_RL.py here (this step alone can done to install ASCA_RL only)
    
 
-ASCA Analysis in an Orange3 pipeline:
+*ASCA Analysis in an Orange3 pipeline:*
 1. Copy the orange pipeline at the location of your data analysis.
 
 2. Import and review your data (possibility to merge 2 tables for a labelling process, or to directly  ready to use dataset). Defin your grouping columns as categorical.
