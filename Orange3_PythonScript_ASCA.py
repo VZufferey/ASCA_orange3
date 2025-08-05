@@ -70,7 +70,7 @@ if factor_subtract_id is not None:
     factor_names_corrected = [name + " - " + asca.factor_names[factor_subtract_id] for name in factor_names]
     variable_names_corrected = [name.replace("NORM", "-" + asca.factor_names[factor_subtract_id]) for name in variable_names]
 
-asca.fit(X_corrected, F, interactions=interactions, factor_names=factor_names_corrected, variable_names=variable_names_corrected)
+    asca.fit(X_corrected, F, interactions=interactions, factor_names=factor_names_corrected, variable_names=variable_names_corrected)
 
 #ASCA2 output to files
 for i in range(len(factor_names)): #exporter un tableau du plot PCA pour chaque factor
